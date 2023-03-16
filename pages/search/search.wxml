@@ -1,0 +1,44 @@
+<!--pages/search/search.wxml-->
+<view class="search-page">
+  <nav-bar>
+    <view class="top-box" style="height: {{navHeight}}px;">
+      <view class="icon-box">
+        <image bindtap="redirectToBack" class="back-icon" src="../../images/back.png" />
+        <view class="split-line"></view>
+        <image bindtap="redirectToHome" class="home-icon" src="../../images/home_active.png" />
+      </view>
+      <view class="head-box">搜索</view>
+    </view>
+  </nav-bar>
+  <input value="{{searchVal}}" class="search-input" bindinput="onInputChange" placeholder="搜索话题, 问题或人"/>
+  <scroll-view wx:if="{{!isSearching}}" class="result-list">
+    <view class="result-item" wx:key="id" wx:for="{{resultList}}">
+      <view class="rel-item-title">{{item.title}}</view>
+      <view class="rel-item-content">{{item.content}}</view>
+      <view class="rel-item-other">
+        {{item.support}} 赞同 · {{item.remark}} 评论 · {{item.time}}
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:elif="{{searchVal === ''}}" class="hot-list">
+    <view class="hot-title">热搜</view>
+    <view
+      wx:key="id"
+      wx:for="{{hotTopic}}"
+      class="hot-topic-item"
+      bindtap="onViewResult"
+      data-value="{{item.title}}"
+    >
+      <text class="{{index < 3 ? ['item-order', 'top'] : ['item-order']}}">{{index + 1}}</text>
+      <text class="item-title">{{item.title}}</text>
+    </view>
+  </view>
+  <scroll-view wx:else>
+    <view bindtap="onViewResult" data-value="{{item}}" wx:for="{{relationList}}" wx:key="index" class="relation-keyword">
+      <icon class="rel-icon" type="search" size="16"></icon>
+      <text class="rel-text">{{item}}</text>
+    </view>
+    <view class="relation-more" bindtap="onViewResult">查看「{{searchVal}}」的搜索结果</view>
+  </scroll-view>
+</view>
+

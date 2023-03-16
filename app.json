@@ -1,14 +1,41 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/test/test",
+        "pages/list/list",
+        "pages/search/search",
+        "pages/record/main",
+        "pages/me/me",
+        "pages/record/info/index",
+        "pages/index/index",
+        "pages/logs/logs"
+    ],
+    "usingComponents": {
+        "nav-bar": "/components/navBar/navBar"
+      },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#626567",
+        "selectedColor": "#000000",
+        "backgroundColor": "#FFFFFF",
+        "list": [
+        {
+            "pagePath": "pages/test/test",
+            "text": "测试",
+            "iconPath": "images/classify.png",
+            "selectedIconPath": "images/classify_1.png"
+            },
+          {
+            "pagePath": "pages/record/main",
+            "text": "我的",
+            "iconPath": "images/persional.png",
+            "selectedIconPath": "images/persional_1.png"
+          }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }
