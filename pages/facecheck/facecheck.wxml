@@ -1,0 +1,43 @@
+<view class="photo_placeholder">
+  <view wx:if="{{!istaken}}">
+      <camera device-position="{{devicePosition}}" flash="off" style="height: 800rpx;" wx:if="{{isAuth}}">
+      <cover-view>
+          <cover-image class="line" src="/imgs/border.png"></cover-image>
+      </cover-view>
+    </camera>
+  </view>
+  <view class="img_show" wx:if="{{istaken}}">
+    <image src="{{tempImagePath}}" mode="aspectFit"></image>
+  </view>
+</view>
+
+<view  class="boxholder">
+  <view wx:if="{{!istaken}}">
+    <view class="warning">
+      <text >为保证正常打卡，拍照时尽量将与辅助框相贴合</text>
+    </view>
+    <view class="take_button">
+      <button class="button1" style="width: 200rpx;" bindtap="takePhoto">拍照</button>
+      <button class="button2" style="width: 300rpx;" bindtap="reverseCamera">摄像头切换</button>
+    </view>
+  </view>
+  <view wx:if="{{istaken}}"> 
+    <view class="attendance_data_list">
+      <view class="info1">
+        <i class="iconfont icon-didian" ></i>
+        <text class="data_list">打卡时间： {{date}}  {{time}}</text>
+      </view>
+      <view>
+        <i class="iconfont icon-shijian"></i>
+        <text class="data_list">打卡地点： {{formatted_addresses}}</text>
+      </view>
+    </view>
+    <view class="take_button">
+      <button class="button1" style="width: 200rpx;" bindtap="check_update">打卡</button>
+      <button class="button2" style="width: 200rpx;" bindtap="rephoto">重拍</button>
+    </view>
+  </view>
+  <view wx:if="{{check_failure}}" class="button_to_appeal">
+    <text bindtap="to_appeal">无法正常打卡？点击此处进行申诉</text>
+  </view>
+</view>
