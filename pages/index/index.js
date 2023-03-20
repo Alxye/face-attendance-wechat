@@ -1,32 +1,13 @@
 // index.js
-// 获取应用单例
+// 获取应用实例
 const app = getApp()
-
-// 默认头像
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
-
+var globaldata = app.globalData;
 Page({
   data: {
-    avatarUrl: defaultAvatarUrl,
     userInfo: {},
-    hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
-  },
-  onChooseAvatar(e) {
-      console.log(' ---> ', e.detail)
-      const { avatarUrl } = e.detail 
-      this.setData({
-          avatarUrl,
-        })
-      app.globalData.avatarUrl = avatarUrl
-    },
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad() {
     if (wx.getUserProfile) {
@@ -35,26 +16,73 @@ Page({
       })
     }
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        console.log("00000000")
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+  autoLogin: function(){
+    wx.login({
+      success: resp => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(resp);
+        var that = this;
+        // 获取用户信息
+        wx.getSetting({
+          success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+            wx.getUserInfo({
+            success: userResult => {
+              var platUserInfoMap = {}
+              platUserInfoMap["encryptedData"] = userResult.encryptedData;
+              platUserInfoMap["iv"] = userResult.iv;
+              wx.request({
+                    url:  globaldata.serverHost + 'user/wxlogin',
+                    data: { 
+                      platCode: resp.code,
+                      platUserInfoMap: platUserInfoMap,
+                    },
+                    header: {
+                      "Content-Type": "application/json"
+                    },
+                    method: 'POST',
+                    dataType:'json',
+                      success: function (res) {
+                      console.log(res)
+                      wx.setStorageSync("userinfo", res.data.userinfo) //设置本地缓存
+                      if(res.data.code==10000)
+                        wx.switchTab({
+                          url: '../main/main',
+                        })
+                      if(res.data.code==10001)
+                        wx.showModal({
+                          title: '温馨提示',
+                          content: '注册未审核，请耐心等待',
+                          showCancel: false,
+                          success(res) {},
+                          fail(res) {}
+                        })
+                      if(res.data.code==10002)
+                        wx.showModal({
+                          title: '温馨提示',
+                          content: '用户未注册，请注册后使用',
+                          showCancel: false,
+                          success(res) {
+                            wx.navigateTo({
+                              url: '../register/register'
+                            })
+                          },
+                          fail(res) {}
+                        })
+                    }
+                    })
+              }
+            })
+          } 
+          }
         })
-      }
-    })
+        }
+      })
   },
-//   getUserInfo(e) {
-//     // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-//     console.log(e)
-//     this.setData({
-//       userInfo: e.detail.userInfo,
-//       hasUserInfo: true
-//     })
-//   }
+  getUserInfo(e){
+    this.setData({
+      avatarUrl: e.detail.avatarUrl
+    })  
+  }
 })

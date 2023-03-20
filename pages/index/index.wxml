@@ -1,7 +1,19 @@
-<!--index.wxml-->
-<view>
-    <button class='avatar' open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-        <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
-    </button> 
-    <input class="input" placeholder="请输入昵称"/> 
+<!-- <view class="block">
+  <image class="logo" src="/imgs/logo.png" mode="scaleToFill"></image>
+    <view class="hint_message">
+      <view> <text class="text1" style="font-size: 50rpx;">智慧考勤系统</text> </view>
+      <view> <text style="font-size: 30rpx;">温馨提示</text> </view>
+      <view> <text style="font-size: 30rpx;">授权后系统将自动绑定微信号</text> </view>
+    </view>
+    <button bindtap="autoLogin" style="color: orange; border: gray 1px solid; border-radius: 15rpx;">授权登录</button>
+</view> -->
+
+<image class="logo" src="/imgs/bg3.jpg" mode="aspectFit" style="width: 100%; top: -280rpx;"></image>
+<view class="block">
+    <view class="hint_message">
+      <!-- <view> <text class="text1" style="font-size: 50rpx;">智慧考勤系统</text> </view> -->
+      <!-- <view> <text style="font-size: 30rpx;">温馨提示</text> </view>
+      <view> <text style="font-size: 30rpx;">授权后系统将自动绑定微信号</text> </view> -->
+    </view>
+    <button bindtap="autoLogin" style="color: black; border: rgba(0, 119, 255, 0.151) 1px solid; border-radius: 15rpx;margin-top: 620rpx; background-color: rgba(0, 119, 255, 0.151)">Login</button>
 </view>
