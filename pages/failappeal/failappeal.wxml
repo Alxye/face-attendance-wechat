@@ -1,0 +1,25 @@
+
+<view style="margin-top:10%">
+  <form bindsubmit="formSubmit">
+    <view class="form_item" style="margin-bottom: 50rpx;">
+      <i class="iconfont icon-user"></i>
+      <input type="text" disabled='true' placeholder="员工姓名： {{username}}" name="username" />
+    </view>
+    <view class="form_item" style="margin-bottom: 50rpx;">
+      <i class="iconfont icon-xuegonghao"></i>
+      <input type="text" disabled='true' placeholder="员工工号： {{staffID}}" name="staffid"/>
+    </view>
+    <view class="form_item" style="margin-bottom: 50rpx;">
+      <i class="iconfont icon-shijian"></i>
+      <input type="text" disabled='true' placeholder="申诉时间： {{date}} {{morning_str}}" name="appeal_reason"/>
+    </view>
+    <view class="textarea1">
+      <textarea bindinput="inputRemark" maxlength="200" name="remark" placeholder="备注"></textarea>
+    </view>
+    <view>
+      <button class="submit_btn" form-type="submit">提交</button>
+    </view>
+  </form>
+</view>
+
+

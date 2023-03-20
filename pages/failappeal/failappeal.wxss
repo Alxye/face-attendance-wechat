@@ -1,0 +1,41 @@
+@import"../../styles/iconfont.wxss";
+@import  '/styles/newstyle.wxss';
+page {
+  background-color: rgb(247, 247, 247);
+}
+.title1{
+  font-size: 40rpx;
+  margin-bottom: 30rpx;
+  margin-left: 30rpx;
+}
+
+.form_item {
+  margin: 0 50rpx;
+  height: 60rpx;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.textarea1 {
+  margin: 0 50rpx;
+  height: 300rpx;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20rpx;
+}
+
+i {
+  float: left;
+    height: 36rpx;
+    margin: 10rpx 15rpx;
+    font-size: 20px;
+    color: rgb(50, 100, 192);
+    line-height: 36rpx;
+}
+
+.submit_btn {
+  background: rgb(50, 100, 192);
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 40rpx;
+}
