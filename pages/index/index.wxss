@@ -1,16 +1,41 @@
-/**index.wxss**/
-.avatar {
-    margin-top: 50px;
-}
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+Page{
+  /* background-color: rgba(128, 128, 128, 0.062); */
 }
 
-.input {
-  margin-top: 200px;
-  text-align:center;
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+  color: #aaa;
+}
+
+/* .logo {
+  width: 400rpx;
+  height: 400rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+} */
+
+.logo {
+  height: 100%;
+  position: fixed; 
+  z-index: -1;
+}
+
+.hint_message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: orange;
+  margin-bottom: 50rpx;
+}
+.text1{
+  line-height: 120rpx;
+}
+
+.button{
+  border: 1px solid #70bcf6; 
+  border-radius: 2px;  
+  background-color: rgba(0, 0, 255, 0.151);
 }

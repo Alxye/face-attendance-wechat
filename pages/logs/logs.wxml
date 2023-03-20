@@ -1,4 +1,0 @@
-<!--logs.wxml-->
-<view>
-    <text>{{name}}</text>
-</view>
