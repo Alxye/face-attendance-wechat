@@ -141,13 +141,18 @@ Page({
   check_update:function(){
     let vm = this;
     var userinfo = wx.getStorageSync('userinfo')
+    var morning = 0;
+    if(vm.data.morning_flag=='true')
+      morning = 1;
+    else
+      morning = 0;
     wx.uploadFile({
       url:  globaldata.serverHost + 'attendance/update_info',
       filePath: vm.data.tempImagePath,
       name: 'files',
       formData: {
         staffId: vm.data.staffID,
-        morning_flag: JSON.stringify(vm.data.morning_flag),
+        morning_flag: morning,
         date: vm.data.date,
         time: vm.data.time,
         address: vm.data.formatted_addresses,
