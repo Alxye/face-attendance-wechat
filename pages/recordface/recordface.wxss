@@ -1,0 +1,73 @@
+@import"../../styles/iconfont.wxss";
+page {
+  background-color: rgba(128, 128, 128, 0.089);
+}
+
+.photo_placeholder{
+  height: 800rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  border-radius: 15rpx;
+  border: rgba(128, 128, 128, 0.363) 1px solid;
+}
+
+.img_show image{
+  height: 780rpx;
+  width: 780rpx;
+  position: absolute;
+  left: -15rpx;
+  top: 30rpx;
+}
+
+
+.line{
+  margin-top: 80rpx;
+}
+
+
+button.takePhoto:not([size='mini']) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 90rpx;
+  border-radius: 0;
+}
+
+.take_button{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.button1{
+  font-size: 25rpx;
+}
+
+.button2{
+  font-size: 25rpx;
+}
+
+.warning{
+  color: gray;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.take_button1{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+}
