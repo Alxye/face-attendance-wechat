@@ -1,0 +1,45 @@
+@import"../../styles/iconfont.wxss";
+@import"../../styles/newstyle.wxss";
+
+Page{
+  background-color: rgba(128, 128, 128, 0.075);
+}
+
+.form_item {
+  margin: 0 50rpx;
+  height: 60rpx;
+  border: 1px solid rgb(50, 100, 192);
+  border-radius: 5px;
+}
+i {
+  float: left;
+    height: 36rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 28rpx;
+    font-size: 20px;
+    color: rgb(50, 100, 192);
+    line-height: 36rpx;
+}
+
+i2 {
+  float: left;
+    height: 36rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    font-size: 20px;
+    color: rgb(50, 100, 192);
+    line-height: 36rpx;
+}
+
+.login_btn {
+  background: rgb(50, 100, 192);
+  color: white;
+  margin-bottom: 15px;
+}
+
+.select1{
+  position: absolute;
+  top: -36rpx;
+  left: 40rpx;
+}

@@ -1,0 +1,27 @@
+<view style="margin-top:30%">
+  <form bindsubmit="formSubmit">
+    <view class="form_item" style="margin-bottom: 50rpx;">
+      <i class="iconfont icon-user"></i>
+      <input type="text" placeholder="用户名" name="username"/>
+    </view>
+    <view class="form_item" style="margin-bottom: 50rpx;">
+      <i class="iconfont icon-xuegonghao"></i>
+      <input bindblur="StaffCheck" type="text" placeholder="工号" name="staffid"/>
+    </view>
+    <view class="form_item weui-cell weui-cell_select" style="margin-bottom: 100rpx;">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after" >
+        <i2 class="iconfont icon-department"></i2>
+        <view wx:if="{{!selected}}" class="weui-label" style="font-size: 32rpx; color: gray;">部门编号</view>
+      </view>
+      <view class="weui-cell__bd">
+          <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{departments}}">
+              <view class="weui-select weui-select_in-select-after select1" style="font-size: 32rpx; color: black;" >{{departments[departmentIndex]}}</view>
+          </picker>
+        </view>
+    </view>
+    <view>
+      <button class="login_btn" form-type="submit">信息提交</button>
+    </view>
+  </form>
+</view>
+
