@@ -1,0 +1,82 @@
+<view class="big_boader" >
+  <view class="mytime"> 
+    <view>
+      北京时间 {{date}} {{weekday}} {{myTime}}
+    </view>
+  </view>
+  <view wx:if="{{morning_flag}}"  class="circle-button1" bindtap="attandence_request">
+    <image class="circle-button-image" src="../../imgs/richu.png" ></image>
+    <text class="circle-button-text">上班打卡</text>
+  </view>
+  <view wx:if="{{!morning_flag}}"  class="circle-button2" bindtap="attandence_request">
+    <text class="circle-button-text">下班打卡</text>
+    <image class="circle-button-image" src="../../imgs/riluo.png"></image>
+  </view>
+  <view  class="container">
+      <view class="double-text-container" >
+        <i class="iconfont icon-didian" style="color: {{location_icon}};"></i>
+        <view>
+          <text wx:if="{{get_addressed}}" class="text-container">{{formatted_addresses}}</text>   
+        </view>
+      </view>
+      <view class="button-container">
+        <button style="width:60%; font-size: 25rpx; background-color: white;" bindtap="getaddress">获取位置</button>
+      </view>
+      <view class="divLineX"></view>
+      <view class="distance">
+        <text>距离打卡点: {{distance}}米</text>
+      </view>
+  </view>
+</view>
+
+<view class="today_record">
+  <view class="record1">
+    <view class="record_head1">
+      <j class="iconfont icon-yuandian" style="color: {{spot1_color}};"></j>
+      <text style="font-size: 32rpx; margin: 14rpx 0;">上班打卡</text>
+    </view>
+    <view class="record_body1">
+        <view class="record_body1_row1">
+          <k class="iconfont icon-chenggong"></k>
+          <text>打卡状态： </text>
+          <text wx:if="{{morning_attendence_state==0}}">{{state_list[morning_attendence_state]}}</text>
+          <text wx:if="{{morning_attendence_state==1}}" style="color: green;">{{state_list[morning_attendence_state]}}</text>
+          <text wx:if="{{morning_attendence_state==2}}" style="color: red;">{{state_list[morning_attendence_state]}}</text>
+        </view>
+        <view class="record_body1_row2">
+          <k class="iconfont icon-shijian"></k>
+          <text>打卡时间：{{morning_attandence_time}}</text>
+        </view>
+        <view class="record_body1_row3">
+          <k class="iconfont icon-kaoqinqiandao"></k>
+          <text>打卡地点：{{morning_attandence_address}}</text>
+        </view>        
+    </view>
+  </view>
+
+  <view class="record2">
+    <view class="record_head2">
+      <j2 class="iconfont icon-yuandian" style="color: {{spot2_color}}; "></j2>
+      <text style="font-size: 32rpx; margin: 14rpx 0;">下班打卡</text>
+    </view>
+    <view class="record_body2">
+      <view class="record_body1_row1">
+        <k class="iconfont icon-chenggong"></k>
+        <text>打卡状态：</text>
+        <text wx:if="{{afternoon_attendence_state==0}}">{{state_list[afternoon_attendence_state]}}</text>
+        <text wx:if="{{afternoon_attendence_state==1}}" style="color: green;">{{state_list[afternoon_attendence_state]}}</text>
+        <text wx:if="{{afternoon_attendence_state==2}}" style="color: red;">{{state_list[afternoon_attendence_state]}}</text>
+      </view>
+      <view class="record_body1_row2">
+        <k class="iconfont icon-shijian"></k>
+        <text>打卡时间：{{afternoon_attandence_time}}</text>
+      </view>
+      <view class="record_body1_row3">
+        <k class="iconfont icon-kaoqinqiandao"></k>
+        <text>打卡地点：{{afternoon_attandence_address}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
