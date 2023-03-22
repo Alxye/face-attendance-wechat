@@ -1,0 +1,47 @@
+<view class="weui-cells notopline nobottomline card" style="margin-top:10;">
+  <view class="weui-cell__ft" style="width: 773rpx; height: 100rpx; display: flex; box-sizing: border-box; left: -34rpx; top: 0rpx; position: relative">
+    <view class="bg-white text-light" style="width: 720rpx; position: relative; left: 32rpx; top: 0rpx; height: 104rpx; display: block; box-sizing: border-box">
+      <view class="weui-grid" data-type="迟到">
+        <view class="weui-grid__label text-bold" style="font-size:14px;">{{late_num||0}}</view>
+        <view class="weui-grid__label text-sm text-muted">迟到</view>
+      </view>
+      <view class="weui-grid" data-type="早退">
+        <view class="weui-grid__label text-bold" style="font-size:14px;">{{early_num||0}}</view>
+        <view class="weui-grid__label text-sm text-muted">早退</view>
+      </view>
+      <view class="weui-grid" data-type="缺卡">
+        <view class="weui-grid__label text-bold" style="font-size:14px;">{{lack_num||0}}</view>
+        <view class="weui-grid__label text-sm text-muted">缺卡</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-cells notopline nobottomline card">
+  <view class=" weui-cell">
+    <view class="weui-cell__bd text-bold">日期</view>
+    <view class="weui-cell__bd text-bold text-center">上班</view>
+    <view class="weui-cell__bd text-bold text-right">下班</view>
+  </view>
+  <view class="weui-cell" style="padding:5px 15px;" wx:for="{{list}}" wx:key="index">
+    <view class="weui-cell__bd text-left text-sm">
+        <view class="day">{{item.day}}</view>
+    </view>
+    <view class="weui-cell__bd text-center text-sm">
+      <view class="record-box">
+        <view class="{{item.inStatus=='正常'?'text-green':item.inStatus=='迟到'||item.inStatus=='早退'?'text-red':'text-orange'}}">
+          {{item.inStatus}}
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell__bd text-right text-sm">
+      <view class="record-box">
+        <view class="{{item.outStatus=='正常'?'text-green':item.outStatus=='迟到'||item.outStatus=='早退'?'text-red':'text-orange'}}">
+          {{item.outStatus}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-loadmore weui-loadmore_line " wx:if="{{!list.length}}">
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line ">暂无数据</view>
+</view>

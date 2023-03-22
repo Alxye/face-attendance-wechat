@@ -1,6 +1,6 @@
 <view class="big_boader" >
   <view class="mytime"> 
-    <view>
+    <view style="font-size: 16px;margin-top: 4px;">
       北京时间 {{date}} {{weekday}} {{myTime}}
     </view>
   </view>
@@ -39,9 +39,9 @@
         <view class="record_body1_row1">
           <k class="iconfont icon-chenggong"></k>
           <text>打卡状态： </text>
-          <text wx:if="{{morning_attendence_state==0}}">{{state_list[morning_attendence_state]}}</text>
-          <text wx:if="{{morning_attendence_state==1}}" style="color: green;">{{state_list[morning_attendence_state]}}</text>
-          <text wx:if="{{morning_attendence_state==2}}" style="color: red;">{{state_list[morning_attendence_state]}}</text>
+          <text wx:if="{{morning_attendence_state==0}}">{{morning_state_list[morning_attendence_state]}}</text>
+          <text wx:if="{{morning_attendence_state==1}}" style="color: green;">{{morning_state_list[morning_attendence_state]}}</text>
+          <text wx:if="{{morning_attendence_state==2}}" style="color: red;">{{morning_state_list[morning_attendence_state]}}</text>
         </view>
         <view class="record_body1_row2">
           <k class="iconfont icon-shijian"></k>
@@ -63,9 +63,9 @@
       <view class="record_body1_row1">
         <k class="iconfont icon-chenggong"></k>
         <text>打卡状态：</text>
-        <text wx:if="{{afternoon_attendence_state==0}}">{{state_list[afternoon_attendence_state]}}</text>
-        <text wx:if="{{afternoon_attendence_state==1}}" style="color: green;">{{state_list[afternoon_attendence_state]}}</text>
-        <text wx:if="{{afternoon_attendence_state==2}}" style="color: red;">{{state_list[afternoon_attendence_state]}}</text>
+        <text wx:if="{{afternoon_attendence_state==0}}">{{afternoon_state_list[afternoon_attendence_state]}}</text>
+        <text wx:if="{{afternoon_attendence_state==1}}" style="color: green;">{{afternoon_state_list[afternoon_attendence_state]}}</text>
+        <text wx:if="{{afternoon_attendence_state==2}}" style="color: red;">{{afternoon_state_list[afternoon_attendence_state]}}</text>
       </view>
       <view class="record_body1_row2">
         <k class="iconfont icon-shijian"></k>

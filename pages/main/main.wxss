@@ -43,7 +43,7 @@ page {
   width: 250rpx;
   height: 250rpx;
   border-radius: 50%;
-  background-color: #0080FF;
+  background-color: #4e84fc;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +99,7 @@ page {
   border-radius: 15rpx;
   padding: 10rpx;
   margin-left: 40rpx;
-  margin-top: 320rpx;
+  margin-top: 310rpx;
 }
 
 .double-text-container{

@@ -1,0 +1,77 @@
+<view class="weui-cells notopline nobottomline card">
+  <view class="top-wrapper">
+
+      <view class="tip-box"  bindtap="subscribe">
+        <image style="position: relative; left: 331rpx; top: 0rpx" class="info-icon" src="/imgs/bell_on.png" />
+      </view>
+
+
+    <!-- 获取用户头像和昵称 -->
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width: 176rpx; height: 176rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <input type="nickname" class="weui-input" placeholder="momo" />
+    <!--  -->
+  </view>
+  <view class="weui-cell">
+    <view class="flex flex1">
+      <image class="info-icon" src="/imgs/calendar3.png" />
+      <picker mode="date" value="{{currentDate}}" bindchange="bindDateChange">
+        <view class="picker" style="margin-left:6px;">
+          <span class="iconfont icon-calendar text-sm" >{{currentDate}}</span>
+        </view>
+      </picker>
+      <image class="info-icon" src="/imgs/down-arrow.png" />
+    </view>
+  </view>
+  <view class="weui-cells notopline nobottomline card" style="margin-top: 0;width: 670rpx; height: 160rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+    <view class="weui-cell__ft" style="width: 773rpx; height: 100rpx; display: flex; box-sizing: border-box; left: -34rpx; top: 0rpx; position: relative">
+      <view class="bg-white text-light" style="width: 720rpx; position: relative; left: 32rpx; top: 0rpx; height: 104rpx; display: block; box-sizing: border-box">
+        <view class="weui-grid text-center" data-type="迟到" >
+          <view>
+            <span class="tag {{todayInfo_late?'tag-orange':''}}">{{todayInfo_late||0}}</span>
+          </view>
+          <view class="text-sm" style="margin-top:5px;">迟到</view>
+        </view>
+        <view class="weui-grid text-center" data-type="早退" >
+          <view>
+            <span class="tag {{todayInfo_leaveEarly?'tag-orange':''}}">{{todayInfo_leaveEarly||0}}</span>
+          </view>
+          <view class="text-sm" style="margin-top:5px;">早退</view>
+        </view>
+        <view class="weui-grid text-center" data-type="缺卡" >
+          <view>
+            <span class="tag {{todayInfo_lackCount?'tag-orange':''}}">{{todayInfo_lackCount||0}}</span>
+          </view>
+          <view class="text-sm" style="margin-top:5px;">缺卡</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <noData noData="{{noData}}"></noData>
+  <!-- <modal id="modal" style="position: relative; left: 0rpx; top: 0rpx">
+    <recordInfo id="recordInfo"></recordInfo>
+</modal> -->
+<view class="weui-cells notopline nobottomline card" >
+  <prompt id="prompt"></prompt>
+  <dropdownList id="dropdownList"></dropdownList>
+  <view class="grids card">
+    <navigator class="grid guide" data-guidemsg="查看我的考勤" url="../myrecord/myrecord">
+      <image class="head-sm" src="https://cdn.mip.cn/orange/attend/my-attend.png" style="margin:0;"></image>
+      <view class="weui-grid__label text-sm">我的考勤</view>
+    </navigator>
+    <navigator class="grid guide" url="../myapprove/myapprove">
+      <image class="head-sm" src="https://cdn.mip.cn/orange/attend/buka.png" style="margin:0;position:relative;"></image>
+      <view class="weui-grid__label text-sm">补卡申请</view>
+    </navigator>
+    <navigator class="grid guide" url="../allappeal/allappeal">
+      <image class="head-sm" src="https://cdn.mip.cn/orange/attend/my-approve.png" style="margin:0;position:relative;"></image>
+      <view class="weui-grid__label text-sm">我的申请</view>
+    </navigator>
+    <navigator class="grid guide" url="../news/news">
+      <image class="head-sm" src="../../imgs/news.png" style="margin:0;position:relative;"></image>
+      <view class="weui-grid__label text-sm">订阅提醒</view>
+    </navigator>
+  </view>
+</view>
+</view>

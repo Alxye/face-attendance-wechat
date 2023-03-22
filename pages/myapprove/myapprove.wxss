@@ -1,0 +1,6 @@
+@import  '/styles/newstyle.wxss';
+.btn-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}

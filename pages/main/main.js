@@ -29,7 +29,8 @@ Page({
     afternoon_attendence_state: 0,
     afternoon_attandence_time: '',
     afternoon_attandence_address: '',
-    state_list: ['未打卡','已打卡','缺勤']
+    morning_state_list: ['未打卡','已打卡','迟到'],
+    afternoon_state_list: ['未打卡','已打卡','早退']
   },
 
   /**
@@ -55,7 +56,7 @@ Page({
       method: 'POST',
       dataType:'json',
         success: function (res) {
-          if(res.data.code==1){
+          if(res.data.code!=0){
             vm.setData({
               morning_attendence_state: res.data.am_type,
               morning_attandence_time: '',
@@ -64,20 +65,18 @@ Page({
               afternoon_attandence_time: '',
               afternoon_attandence_address: '',
             })
-            if(res.data.am_type==1){
+            if(res.data.am_type!=0){
               vm.setData({
                 morning_attandence_time: res.data.clock_in_time,
                 morning_attandence_address: res.data.am_address,
               })
             }
-            if(res.data.pm_type==1){
+            if(res.data.pm_type!=0){
               vm.setData({
                 afternoon_attandence_time: res.data.clock_out_time,
                 afternoon_attandence_address: res.data.pm_address,
               })
             }
-            
-            
           }
         }
       })
@@ -245,7 +244,7 @@ Page({
         })
       }
       else{
-        if((vm.data.morning_flag==true&&vm.data.morning_attendence_state==1)||(vm.data.morning_flag==false&&vm.data.morning_attendence_state==1)){
+        if((vm.data.morning_flag==true&&vm.data.morning_attendence_state!=0)||(vm.data.morning_flag==false&&vm.data.morning_attendence_state!=0)){
           wx.showModal({
             title: '温馨提示',
             content: '已打卡，请勿重复打卡',
@@ -269,24 +268,40 @@ Page({
    */
   onShow() {
     let vm = this;
-    if(new Date().getHours()>=12)
-      vm.setData({
-        morning_flag: false,
-        spot1_color: 'gray',
-        spot2_color: '#0080FF'
-      })
-    else
-      vm.setData({
-        morning_flag: true,
-        spot1_color: 'orange',
-        spot2_color: 'gray'
-      })
-      vm.timer=setInterval(() => {
+    var userinfo = wx.getStorageSync('userinfo');
+    wx.request({
+      url:  globaldata.serverHost + 'attendance/judge_morning_flag',
+      data: { 
+        departmentID: userinfo.departmentID,
+      },
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: 'POST',
+      dataType:'json',
+        success: function (res) {
+          if(res.data.code==1){
+            vm.setData({
+              morning_flag: true,
+              spot1_color: 'orange',
+              spot2_color: 'gray'
+            })
+          }
+          else{
+            vm.setData({
+              morning_flag: false,
+              spot1_color: 'gray',
+              spot2_color: '#0080FF'
+            })
+          }
+        }
+    })
+    vm.timer=setInterval(() => {
           var DATE = util.formatonlytime(new Date());
           this.setData({
               myTime: DATE
           })
-      }, 1000);
+    }, 1000);
     vm.get_today_attendence();
   },
 

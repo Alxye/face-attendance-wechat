@@ -22,6 +22,10 @@
     background: #0079be!important;
 }
 
+.bg-blue2 {
+  background: #4e84fc!important;
+}
+
 .bg-muted {
     background: #f0f0f0;
 }

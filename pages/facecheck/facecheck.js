@@ -160,7 +160,7 @@ Page({
       },
       success: function (res){
         var json= JSON.parse(res.data)
-        if(json.code==1){
+        if(json.code==1||json.code==2){
           wx.showModal({
             title: '打卡成功',
             content: '',
@@ -176,31 +176,16 @@ Page({
           
         }
         else{
-          if(json.code==2){
-            wx.showModal({
-              title: '未在打卡时间范围内打卡无效',
-              content: '',
-              showCancel: false,
-              success(res) {},
-              fail(res) {}
-            })
-            vm.setData({
-              istaken: false,
-              check_failure: true
-            })
-          }
-          else{
-            wx.showToast({
-              title: '人脸识别失败，请重新拍照',
-              duration:3000,
-              mask:true,
-              image:'/imgs/error.png',
-            })
-            vm.setData({
-              istaken: false,
-              check_failure: true
-            })
-          }
+          wx.showToast({
+            title: '打卡失败',
+            duration:3000,
+            mask:true,
+            image:'/imgs/error.png',
+          })
+          vm.setData({
+            istaken: false,
+            check_failure: true
+          })
         }
       }
     })
