@@ -1,0 +1,45 @@
+@import  '/styles/newstyle.wxss';
+.btn {
+  background: #f5f5f5;
+  border: 1px solid #ececec;
+  padding: 5px;
+}
+
+.btn,.day {
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.day {
+  background-color: orange;
+  color: #fff;
+  padding: 3px;
+  text-align: center;
+  width: 80px;
+}
+
+.weekday {
+  display: inline-block;
+}
+
+.weui-grids {
+  border: none;
+  padding-left: 10px;
+}
+
+.weui-grid {
+  border: none;
+  padding: 5px;
+}
+
+.weui-grid__label {
+  margin-top: 0;
+}
+
+.weui-grid__label.text-sm {
+  font-size: 12px!important;
+}
+
+.weui-grid,.weui-grids {
+  border-color: #ebeef5;
+}

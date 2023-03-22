@@ -1,0 +1,23 @@
+<sticky id="sticky" outerStyle="left:0px;right:0px;background:#f7f7f7;">
+  <tab id="tab"></tab>
+  <view style="overflow-x:scroll;white-space:nowrap;margin:10px 15px;">
+  </view>
+</sticky>
+<view class="weui-cells notopline nobottomline card" wx:for="{{list}}" wx:key="index">
+  <view class="weui-cell" data-index="{{index}}" style="align-items:flex-start">
+    <view class="weui-cell__bd " style="font-size: 15px;">
+      <view style="margin-top:5px;" wx:if="{{item.AmPm==0}}">{{' ' + item.Date+ ' 上班'}}</view>
+      <view style="margin-top:5px;" wx:if="{{item.AmPm==1}}">{{' ' + item.Date+ ' 下班'}}</view>
+
+    </view>
+    <span class="tag tag-orange" wx:if="{{item.category==0}}">{{'打卡失败'}}</span>
+    <span class="tag tag-orange" wx:if="{{item.category==1}}">{{'补卡'}}</span>
+    <span class="tag tag-blue" wx:if="{{item.applyStatus==0}}">{{'审批中'}}</span>
+    <span class="tag tag-green" wx:if="{{item.applyStatus==1}}">{{'已通过'}}</span>
+    <span class="tag tag-red" wx:if="{{item.applyStatus==2}}">{{'已驳回'}}</span>
+  </view>
+</view>
+<nodata noData="{{noData}}"></nodata>
+<footer>
+  <view class="text-center" style="margin-left:15px;">合计：{{total||0}}个</view>
+</footer>

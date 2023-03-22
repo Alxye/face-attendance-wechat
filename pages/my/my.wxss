@@ -1,0 +1,150 @@
+@import  '/styles/newstyle.wxss';
+@import  '/styles/iconfont.wxss';
+page {
+  padding-bottom: 50px;
+}
+
+.weui-grids {
+  border: none;
+  padding-left: 10px;
+}
+
+.weui-grid {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.info-icon {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.top-wrapper {
+  width: 100%;
+  height: 340rpx;
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+}
+
+.avatar-wrapper {
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.weui-input {
+  color: #C1C1C1;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-count {
+  color: #121212;
+  font-size: 40rpx;
+  margin-bottom: 6rpx;
+}
+
+.profile-text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.section-title {
+  box-sizing: border-box;
+  padding: 30rpx 20rpx;
+  font-size: 32rpx;
+}
+
+.btn {
+  padding: 0;
+  background-color: transparent;
+  /*按钮透明*/
+  border: none;
+  /*设置按钮边框*/
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btn-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btn-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.grids {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.head-sm {
+  height: 25px;
+  margin-right: 10px;
+  width: 25px;
+}
+.grid {
+  flex: 1;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+}
+
+.empty-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 30rpx 0rpx;
+}
+
+.empty-img {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+
+.empty-text {
+  font-size: 24rpx;
+  color: #C1C1C1;
+  margin: 20rpx 0rpx;
+}
+
+.back-btn {
+  width: 140rpx !important;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 20rpx;
+  padding: 0px;
+  font-weight: normal;
+  border-radius: 6rpx;
+  background-color: #3A72FF;
+  color: #fff;
+  text-align: center;
+}

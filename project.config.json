@@ -1,51 +1,54 @@
 {
-    "description": "项目配置文件",
-    "packOptions": {
-        "ignore": [],
-        "include": []
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "bundle": false,
+    "userConfirmedBundleSwitch": false,
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "enableEngineNative": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false,
+    "minifyWXML": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
     },
-    "setting": {
-        "bundle": false,
-        "userConfirmedBundleSwitch": false,
-        "urlCheck": true,
-        "scopeDataCheck": false,
-        "coverView": true,
-        "es6": true,
-        "postcss": true,
-        "compileHotReLoad": false,
-        "lazyloadPlaceholderEnable": false,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "autoAudits": false,
-        "newFeature": false,
-        "uglifyFileName": false,
-        "uploadWithSourceMap": true,
-        "useIsolateContext": true,
-        "nodeModules": false,
-        "enhance": true,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
-        "showShadowRootInWxmlPanel": true,
-        "packNpmManually": false,
-        "enableEngineNative": false,
-        "packNpmRelationList": [],
-        "minifyWXSS": true,
-        "showES6CompileOption": false,
-        "minifyWXML": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        }
-    },
-    "compileType": "miniprogram",
-    "libVersion": "2.19.4",
-    "appid": "wx8fa383593f6e2674",
-    "projectname": "miniprogram-92",
-    "condition": {},
-    "editorSetting": {
-        "tabIndent": "insertSpaces",
-        "tabSize": 4
-    }
+    "condition": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.4",
+  "appid": "wxf1cfdd47f57ca434",
+  "projectname": "miniprogram-92",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "ignoreDevUnusedFiles": false,
+  "ignoreUploadUnusedFiles": false
 }
