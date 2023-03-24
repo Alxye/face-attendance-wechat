@@ -176,12 +176,22 @@ Page({
           
         }
         else{
-          wx.showToast({
-            title: '打卡失败',
-            duration:3000,
-            mask:true,
-            image:'/imgs/error.png',
-          })
+          if(json.code==0){
+            wx.showToast({
+              title: '人脸识别失败',
+              duration:3000,
+              mask:true,
+              image:'/imgs/error.png',
+            })
+          }
+          else{
+            wx.showToast({
+              title: '超出打卡时间段',
+              duration:3000,
+              mask:true,
+              image:'/imgs/error.png',
+            })
+          }
           vm.setData({
             istaken: false,
             check_failure: true

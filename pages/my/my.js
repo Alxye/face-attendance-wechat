@@ -4,11 +4,13 @@ var globaldata = app.globalData;
 Page({
   data: {
     currentDate: util.getNowDate(new Date()),
+    currentDate2: util.getNowDate(new Date()),
     todayInfo_late: 0,
     todayInfo_leaveEarly: 0,
     todayInfo_lackCount: 0,
     avatarUrl: "/imgs/cus.png",
-    subscribe_state: ''
+    subscribe_state: '',
+    notice: '11ddd11'
   },
   onLoad: function (e) {
     let a = this;
@@ -25,6 +27,7 @@ Page({
       url: globaldata.serverHost + 'my/today_record',
       data: {
         staffID: userinfo.staffID,
+        departmentID: userinfo.departmentID,
         date: this.data.currentDate,
       },
       header: {
@@ -37,7 +40,8 @@ Page({
           vm.setData({ 
             todayInfo_late: res.data.am_type == 2 ? 1 : 0,
             todayInfo_leaveEarly: res.data.pm_type == 2 ? 1 : 0,
-            todayInfo_lackCount: res.data.am_type == 0 && res.data.pm_type == 0 ? 2 : res.data.am_type == 0 || res.data.pm_type == 0 ? 1 : 0
+            todayInfo_lackCount: res.data.am_type == 0 && res.data.pm_type == 0 ? 2 : res.data.am_type == 0 || res.data.pm_type == 0 ? 1 : 0,
+            notice: res.data.notice
           })
         }
       }
@@ -67,17 +71,17 @@ Page({
       subscribe_state: ''
     })
     wx.requestSubscribeMessage({
-      tmplIds: ['wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI'],
+      tmplIds: [globaldata.templateID],
       success(res) {
+        console.log(res);
         wx.getSetting({
+          
           withSubscriptions: true,
           success (resp) {
             if(resp.subscriptionsSetting.itemSettings!=undefined){
-              // console.log('resp.subscriptionsSetting.itemSettings:'+resp.subscriptionsSetting.itemSettings);
-              // console.log('resp.subscriptionsSetting.itemSettings.wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI:'+resp.subscriptionsSetting.itemSettings['wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI']);
-              if(resp.subscriptionsSetting.itemSettings['wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI']!=undefined)
+              if(resp.subscriptionsSetting.itemSettings[globaldata.templateID]!=undefined)
                 vm.setData({
-                  subscribe_state: resp.subscriptionsSetting.itemSettings['7hzQP9xi-rCy5dwWIUn-SS4OKyZgUceRS6FelBDku34']
+                  subscribe_state: resp.subscriptionsSetting.itemSettings[globaldata.templateID]
                 })
             }
             vm.subscribe_message(res);
@@ -107,7 +111,7 @@ Page({
           // console.log('job clear')
         }
       })
-      if(res['wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI']=='accept'){
+      if(res[globaldata.templateID]=='accept'){
         wx.request({
           url:  globaldata.serverHost + 'message/subscription',
           data: { 
@@ -154,7 +158,7 @@ Page({
             })
           }
           else{
-            if(res['wARfZj5N2uv-NkOzN1Ukkv1Sjwm3uYcSgwrjAzY0KNI']=='accept'){
+            if(res[globaldata.templateID]=='accept'){
               wx.request({
                 url:  globaldata.serverHost + 'message/subscription_longtime',
                 data: { 

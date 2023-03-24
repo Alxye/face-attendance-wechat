@@ -166,11 +166,11 @@ j2 {
 }
 
 .record1{
-  height: 270rpx;
+  height: 300rpx;
 }
 
 .record2{
-  height: 270rpx;
+  height: 300rpx;
 }
 
 .today_record{

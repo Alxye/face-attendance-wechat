@@ -28,14 +28,14 @@
     </view>
     <view class="weui-cell__bd text-center text-sm">
       <view class="record-box">
-        <view class="{{item.inStatus=='正常'?'text-green':item.inStatus=='迟到'||item.inStatus=='早退'?'text-red':'text-orange'}}">
+        <view class="{{item.inStatus=='正常'?'text-green':item.inStatus=='迟到'||item.inStatus=='早退'?'text-orange':'text-red'}}">
           {{item.inStatus}}
         </view>
       </view>
     </view>
     <view class="weui-cell__bd text-right text-sm">
       <view class="record-box">
-        <view class="{{item.outStatus=='正常'?'text-green':item.outStatus=='迟到'||item.outStatus=='早退'?'text-red':'text-orange'}}">
+        <view class="{{item.outStatus=='正常'?'text-green':item.outStatus=='迟到'||item.outStatus=='早退'?'text-orange':'text-red'}}">
           {{item.outStatus}}
         </view>
       </view>

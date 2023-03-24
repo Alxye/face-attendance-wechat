@@ -108,7 +108,7 @@ page {
 }
 
 .text-red {
-    color: #ff821e!important;
+    color: red!important;
 }
 
 .text-blue {
