@@ -34,9 +34,10 @@
 
 4、app.json中的templateID为小程序订阅消息模板ID。若第一步中没有更改源代码使用的appid则不需要变动；若第一步更改为自身appid，请在微信开发者平台中注册订阅消息，选择时模板为考勤通知（类目为企业管理），模板选择的内容如下图所示
 
-<img src="C:\Users\zxy20\Desktop\小程序端部署\fig6.png" style="zoom:50%;" />
+<img src="readme_imgs\fig6.png" style="zoom:50%;" />
 
-<img src="C:\Users\zxy20\Desktop\小程序端部署\fig7.jpg" alt="fig7" style="zoom: 50%;" />
+<img src="readme_imgs\fig7.jpg" style="zoom: 50%;" />
 
 5、保证微信小程序前端所使用的appid以及templateID和该项目flask后端代码配置文件config.py中填写的一致即可（**必须**）
+
 
