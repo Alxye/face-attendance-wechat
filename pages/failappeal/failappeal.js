@@ -19,7 +19,7 @@ Page({
         username: userinfo.username,
         staffID: userinfo.staffID
       })
-      if(!this.data.morning_flag)
+      if(this.data.morning_flag=='false')
         this.setData({
           morning_str: '下午'
         })

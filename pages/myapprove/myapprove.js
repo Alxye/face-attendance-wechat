@@ -9,6 +9,7 @@ Page({
     endAmPm: "下班",
     startAmPmIndex: 0,
     endAmPmIndex: 1,
+    currentDate: util.getNowDate(new Date()),
     startDate: util.getNowDate(new Date()),
     endDate: util.getNowDate(new Date()),
     remark: ''

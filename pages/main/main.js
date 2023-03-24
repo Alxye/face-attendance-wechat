@@ -38,7 +38,7 @@ Page({
    */
   onLoad(options) {
     qqmapsdk = new QQMapWX({
-      key: 'R23BZ-ADDED-JXA4V-PTNZM-FRFF3-XLF72'
+      key: globaldata.mapkey
     });
   },
   get_today_attendence: function(){
@@ -244,7 +244,7 @@ Page({
         })
       }
       else{
-        if((vm.data.morning_flag==true&&vm.data.morning_attendence_state!=0)||(vm.data.morning_flag==false&&vm.data.morning_attendence_state!=0)){
+        if((vm.data.morning_flag==true&&vm.data.morning_attendence_state!=0)||(vm.data.morning_flag==false&&vm.data.afternoon_attendence_state!=0)){
           wx.showModal({
             title: '温馨提示',
             content: '已打卡，请勿重复打卡',

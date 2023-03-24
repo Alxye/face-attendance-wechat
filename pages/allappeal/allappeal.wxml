@@ -8,6 +8,7 @@
     <view class="weui-cell__bd " style="font-size: 15px;">
       <view style="margin-top:5px;" wx:if="{{item.AmPm==0}}">{{' ' + item.Date+ ' 上班'}}</view>
       <view style="margin-top:5px;" wx:if="{{item.AmPm==1}}">{{' ' + item.Date+ ' 下班'}}</view>
+      <view class="text-muted" style="margin-top:5px;" wx:if="{{item.applyStatus==2}}">{{'驳回理由：' + item.reject_reason}}</view>
 
     </view>
     <span class="tag tag-orange" wx:if="{{item.category==0}}">{{'打卡失败'}}</span>

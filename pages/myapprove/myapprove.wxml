@@ -6,7 +6,7 @@
   <view class="weui-cells__title">起止时间</view>
   <view style="display:flex;padding-top:0px;justify-content:space-around;padding:5px 15px">
     
-    <picker style="border-radius:5px;width:120px;text-align:center;" class="bg-orange text-white" mode="date" value="{{startDate}}" bindchange="bindDateChangeStart">
+    <picker end="{{currentDate}}" style="border-radius:5px;width:120px;text-align:center;" class="bg-orange text-white" mode="date" value="{{startDate}}" bindchange="bindDateChangeStart">
       <view class="picker" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;">
         {{startDate}}
       </view>
@@ -20,7 +20,7 @@
   <view class="text-sm text-muted" style="padding:5px;text-align:center;">至</view>
   <view style="display:flex;justify-content:space-around;padding:5px 15px">
 
-    <picker style="border-radius:5px;width:120px;text-align:center;" class="bg-blue2 text-white" mode="date" value="{{endDate}}" bindchange="bindDateChangeEnd">
+    <picker end="{{currentDate}}" style="border-radius:5px;width:120px;text-align:center;" class="bg-blue2 text-white" mode="date" value="{{endDate}}" bindchange="bindDateChangeEnd">
       <view class="picker" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;">
         {{endDate}}
       </view>
