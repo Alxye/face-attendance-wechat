@@ -11,19 +11,13 @@
   </view>
 </view>
 <view>
-  <view wx:if="{{!istaken}}">
+  <view wx:if="{{!completed}}">
     <view class="warning">
       <text >拍照时尽量将与辅助框相贴合</text>
     </view>
     <view class="take_button">
       <button class="button1" style="width: 200rpx;" bindtap="takePhoto">拍照</button>
       <button class="button2" style="width: 300rpx;" bindtap="reverseCamera">摄像头切换</button>
-    </view>
-  </view>
-  <view wx:if="{{istaken&&!completed}}"> 
-    <view class="take_button1">
-      <button class="button1" style="width: 200rpx;" bindtap="check_update">确认</button>
-      <button class="button2" style="width: 200rpx;" bindtap="rephoto">重拍</button>
     </view>
   </view>
 </view>

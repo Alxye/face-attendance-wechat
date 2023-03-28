@@ -52,7 +52,7 @@ Page({
       avatarUrl
     } = e.detail
     this.setData({
-      avatarUrl: avatarUrl
+      avatarUrl: avatarUrl,
     })
   },
   bindDateChange: function (e) {

@@ -131,6 +131,7 @@ Page({
             istaken: true,
             time: time,
           })
+          vm.check_update()
         },
         fail: (res) => {
           //拍摄失败

@@ -4,34 +4,34 @@
   <input hidden name="endAmPm" value="{{endAmPm}}"></input>
   <input hidden name="endDate" value="{{endDate}}"></input>
   <view class="weui-cells__title">起止时间</view>
-  <view style="display:flex;padding-top:0px;justify-content:space-around;padding:5px 15px">
+  <view style="margin-top:20px;display:flex;padding-top:0px;justify-content:space-around;padding:5px 15px">
     
     <picker end="{{currentDate}}" style="border-radius:5px;width:120px;text-align:center;" class="bg-orange text-white" mode="date" value="{{startDate}}" bindchange="bindDateChangeStart">
-      <view class="picker" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;">
+      <view class="picker" style="box-shadow:0 6rpx 20rpx 2rpx #f38b0299;display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;">
         {{startDate}}
       </view>
     </picker>
 
     <picker bindchange="pickedAmPm" data-flag="startAmPm" range="{{amPms}}" style="display:inline" value="{{startAmPmIndex}}">
-      <view class="bg-orange text-white;" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;"> {{startAmPm}}</view>
+      <view class="bg-orange text-white;" style="box-shadow:0 6rpx 20rpx 2rpx #f38b0299;display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;"> {{startAmPm}}</view>
     </picker>
 
   </view>
   <view class="text-sm text-muted" style="padding:5px;text-align:center;">至</view>
   <view style="display:flex;justify-content:space-around;padding:5px 15px">
 
-    <picker end="{{currentDate}}" style="border-radius:5px;width:120px;text-align:center;" class="bg-blue2 text-white" mode="date" value="{{endDate}}" bindchange="bindDateChangeEnd">
+    <picker end="{{currentDate}}" style="box-shadow:0 6rpx 20rpx 2rpx #4564ee99;border-radius:5px;width:120px;text-align:center;" class="bg-blue2 text-white" mode="date" value="{{endDate}}" bindchange="bindDateChangeEnd">
       <view class="picker" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;">
         {{endDate}}
       </view>
     </picker>
 
     <picker bindchange="pickedAmPm" data-flag="endAmPm" range="{{amPms}}" style="display:inline" value="{{endAmPmIndex}}">
-      <view class="bg-blue2 text-white;" style="display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;"> {{endAmPm}}</view>
+      <view class="bg-blue2 text-white;" style="box-shadow:0 6rpx 20rpx 2rpx #4564ee99;display:inline-block;padding:10px;border-radius:5px;text-align:center;width:100px;height:24px;"> {{endAmPm}}</view>
     </picker>
 
   </view>
-  <view class="weui-cells notopline nobottomline card">
+  <view class="weui-cells notopline nobottomline card" style="margin-top: 40px;">
     <view class="weui-cell">
       <view class="weui-cell__bd">
         <textarea bindinput="inputRemark" class="weui-textarea" maxlength="200" name="remark" placeholder="备注" style="height:100px" value="{{remark}}"></textarea>

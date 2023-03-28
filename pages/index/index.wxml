@@ -16,4 +16,5 @@
       <view> <text style="font-size: 30rpx;">授权后系统将自动绑定微信号</text> </view> -->
     </view>
     <button bindtap="autoLogin" style="color: black; border: rgba(0, 119, 255, 0.151) 1px solid; border-radius: 15rpx;margin-top: 620rpx; background-color: rgba(0, 119, 255, 0.151)">Login</button>
+    <view style="margin-top: 50rpx; font-size: 14px;">版本号：1.0.3</view>
 </view>

@@ -1,25 +1,26 @@
-<view class="weui-cells notopline nobottomline card">
-  <view class="top-wrapper" style="width: 710rpx; height: 400rpx; display: block; box-sizing: border-box">
+<view class="top-wrapper" style="width: 710rpx; height: 400rpx; display: block; box-sizing: border-box">
 
-    <!-- <view class="tip-box" bindtap="subscribe">
-      <image style="position: relative; left: 331rpx; top: 0rpx" class="info-icon" src="/imgs/bell_on.png" />
-    </view> -->
-    <view class='wrapX'>
-      <view class="wrapOut">
-        <view class="wrapInner">
-          <view class="contant">{{notice}}</view>
-        </view>
+  <!-- <view class="tip-box" bindtap="subscribe">
+  <image style="position: relative; left: 331rpx; top: 0rpx" class="info-icon" src="/imgs/bell_on.png" />
+</view> -->
+  <view class='wrapX'>
+    <view class="wrapOut">
+      <view class="wrapInner">
+        <view class="contant">{{notice}}</view>
       </view>
     </view>
-
-
-    <!-- 获取用户头像和昵称 -->
-    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width: 176rpx; height: 176rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
-      <image class="avatar" src="{{avatarUrl}}"></image>
-    </button>
-    <input type="nickname" class="weui-input" placeholder="momo" />
-    <!--  -->
   </view>
+
+
+  <!-- 获取用户头像和昵称 -->
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width: 176rpx; height: 176rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <input type="nickname" class="weui-input" placeholder="momo" />
+  <!--  -->
+</view>
+
+<view class="weui-cells notopline nobottomline card">
   <view class="weui-cell">
     <view class="flex flex1">
       <image class="info-icon" src="/imgs/calendar3.png" />
@@ -80,6 +81,10 @@
         <view class="weui-grid__label text-sm">订阅提醒</view>
       </view>
     </view>
-    
+
   </view>
+
+</view>
+<view class="block">
+  <view style="font-size: 14px;">版本号：1.0.3</view>
 </view>
