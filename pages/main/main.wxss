@@ -33,6 +33,7 @@ page {
   top: 80rpx;
   left: 240rpx;
   z-index: 2;
+  box-shadow:0 6rpx 20rpx 2rpx #f38b0299;
 }
 
 .circle-button1:active{
@@ -52,6 +53,7 @@ page {
   top: 80rpx;
   left: 240rpx;
   z-index: 2;
+  box-shadow:0 6rpx 20rpx 2rpx #4564ee99;
 }
 .circle-button2:active{
   background-color: #0080ff98;

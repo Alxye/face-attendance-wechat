@@ -4,7 +4,13 @@
 page {
   padding-bottom: 50px;
 }
-
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+  color: #aaa;
+}
 .weui-grids {
   border: none;
   padding-left: 10px;

@@ -61,26 +61,8 @@ Page({
         }
         else{
           var userinfo = wx.getStorageSync('userinfo');
-          wx.request({
-            url:  globaldata.serverHost + 'user/register',
-            data: { 
-              username: username,
-              staffID: staffID,
-              departmentname: vm.data.departments[vm.data.departmentIndex],
-              openid: userinfo.openid
-            },
-            header: {
-              "Content-Type": "application/json"
-            },
-            method: 'POST',
-            dataType:'json',
-            success: function (res) {
-              console.log(res)
-              wx.setStorageSync('register_staffId', staffID)
-              wx.navigateTo({
-                url: '../recordface/recordface?staffID=' + staffID
-              })
-            }
+          wx.navigateTo({
+            url: '../recordface/recordface?staffID=' + staffID + "&username=" + username+ "&departmentname=" + vm.data.departments[vm.data.departmentIndex] + "&openid=" + userinfo.openid
           })
         }
       }

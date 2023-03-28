@@ -2,7 +2,7 @@
 @import"../../styles/newstyle.wxss";
 
 Page{
-  background-color: rgba(128, 128, 128, 0.075);
+  background-color: white;
 }
 
 .form_item {
@@ -12,7 +12,7 @@ Page{
   border-radius: 5px;
 }
 i {
-  float: left;
+    float: left;
     height: 36rpx;
     margin-top: 10rpx;
     margin-left: 10rpx;
@@ -42,4 +42,8 @@ i2 {
   position: absolute;
   top: -36rpx;
   left: 40rpx;
+}
+
+input{
+  margin-top: 6rpx;
 }

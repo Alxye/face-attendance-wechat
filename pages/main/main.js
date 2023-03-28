@@ -30,7 +30,9 @@ Page({
     afternoon_attandence_time: '',
     afternoon_attandence_address: '',
     morning_state_list: ['未打卡','已打卡','迟到'],
-    afternoon_state_list: ['未打卡','已打卡','早退']
+    afternoon_state_list: ['未打卡','已打卡','早退'],
+    longitude0: 0.0,
+    latitude0: 0.0
   },
 
   /**
@@ -139,6 +141,24 @@ Page({
   // 微信获得经纬度
   getLocation: function () {
     let vm = this;
+    var userinfo = wx.getStorageSync('userinfo')
+    wx.request({
+      url:  globaldata.serverHost + 'department/location_get',
+      data: { 
+        departmentID: userinfo.departmentID
+      },
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: 'POST',
+      dataType:'json',
+      success: function (res) {
+        vm.setData({
+          longitude0: res.data.longitude,
+          latitude0: res.data.latitude
+        })
+      }
+    })
     wx.getLocation({
       type: 'gcj02',
       success: function (res) {
@@ -147,21 +167,21 @@ Page({
         var longitude = res.longitude
         // var speed = res.speed
         // var accuracy = res.accuracy;
-        vm.getLocal(latitude, longitude)
+        vm.getLocal(latitude, longitude, vm.data.latitude0, vm.data.longitude0)
       },
       fail: function (res) {
         console.log('fail' + JSON.stringify(res))
       }
     })
   },
-  calc_distance: function (latitude, longitude) {
-    var weidu2 = 31.270157;
-    var jingdu2 = 120.745253;
-    var radweidu1 = this.Rad(latitude);
-    var radweidu2 = this.Rad(weidu2);
-    var a = radweidu1 - radweidu2;
-    var b = this.Rad(longitude) - this.Rad(jingdu2);
-    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radweidu1) * Math.cos(radweidu2) * Math.pow(Math.sin(b / 2), 2)));
+  calc_distance: function (latitude, longitude, latitude0, longitude0) {
+    var latitude2 = latitude0;
+    var longitude2 = longitude0;
+    var radlatitude1 = this.Rad(latitude);
+    var radlatitude2 = this.Rad(latitude2);
+    var a = radlatitude1 - radlatitude2;
+    var b = this.Rad(longitude) - this.Rad(longitude2);
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radlatitude1) * Math.cos(radlatitude2) * Math.pow(Math.sin(b / 2), 2)));
     s = s * 6378.137;
     s = Math.round(s * 10000) / 10;
     s = s.toFixed(1) //保留两位小数
@@ -171,7 +191,7 @@ Page({
     })
   },
   // 获取当前地理位置
-  getLocal: function (latitude, longitude) {
+  getLocal: function (latitude, longitude, latitude0, longitude0) {
     let vm = this;
     qqmapsdk.reverseGeocoder({
       location: {
@@ -209,7 +229,7 @@ Page({
         // console.log(res);
       }
     });
-    vm.calc_distance(latitude, longitude);
+    vm.calc_distance(latitude, longitude, latitude0, longitude0);
   },
   // 计算距离函数
   Rad(d) { 

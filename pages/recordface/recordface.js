@@ -8,11 +8,17 @@ Page({
     istaken: false,
     tempImagePath: '',
     staffID: '',
-    completed: false
+    completed: false,
+    username: '',
+    departmentname: '',
+    openid: ''
   },
   onLoad(options) {
     this.setData({
-      staffID:options.staffID
+      staffID:options.staffID,
+      username:options.username,
+      departmentname:options.departmentname,
+      openid:options.openid
     })
     const _this = this
     wx.getSetting({
@@ -72,18 +78,13 @@ Page({
             tempImagePath: file,
             istaken: true,
           })
+          vm.check_update()
         },
         fail: (res) => {
           //拍摄失败
         },
       })
     }
-  },
-  rephoto: function(){
-    let vm = this;
-    vm.setData({
-      istaken: false
-    })
   },
   // 打开授权设置界面
   openSetting() {
@@ -121,11 +122,14 @@ Page({
   check_update:function(){
     let vm = this;
     wx.uploadFile({
-      url:  globaldata.serverHost + 'user/facerecord',
+      url:  globaldata.serverHost + 'user/register',
       filePath: vm.data.tempImagePath,
       name: 'files',
       formData: {
-        staffId: vm.data.staffID
+        staffID: vm.data.staffID,
+        username: vm.data.username,
+        departmentname: vm.data.departmentname,
+        openid: vm.data.openid
       },
       success: function (res){
         var json= JSON.parse(res.data)
