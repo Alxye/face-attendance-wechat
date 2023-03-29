@@ -8,7 +8,7 @@ Page({
         staffID: null,
         morning_flag: null,
         date: null,
-        morning_str: '上午',
+        morning_str: '上班',
         reason: '',
     },
     onLoad(options) {
@@ -21,11 +21,11 @@ Page({
       })
       if(this.data.morning_flag=='false')
         this.setData({
-          morning_str: '下午'
+          morning_str: '下班'
         })
       else
         this.setData({
-          morning_str: '上午'
+          morning_str: '上班'
         })
     },
     inputRemark:function(option){
