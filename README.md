@@ -48,7 +48,7 @@ npm install --save weui-miniprogram@1.2.7
 
 3、在微信开发者工具中构建npm包
 
-<img src="imgs\fig1.jpg" style="zoom:50%;" />
+<img src="imgs\fig1.jpg" style="zoom:33%;" />
 
 4、根据需要修改程序默认绑定的appid以及app.json中的配置参数
 
