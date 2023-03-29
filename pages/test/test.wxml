@@ -1,7 +1,0 @@
-<!--pages/test/test.wxml-->
-<view class="tapTest" data-param="Weixin" bindtap="tapName"> Click me! </view>
-<view class="btn-area">
-    <button class='btn' type="primary" bindtap="navtologs">Normal按钮</button>
-    <button class='btn' type="default" loading="true">Loading按钮</button>
-    <button class='btn' disabled="true">Disabled按钮</button>   
-</view>
