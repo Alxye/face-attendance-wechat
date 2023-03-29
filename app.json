@@ -9,8 +9,7 @@
     "pages/main/main",
     "pages/myrecord/myrecord",
     "pages/myapprove/myapprove",
-    "pages/allappeal/allappeal",
-    "pages/news/news"
+    "pages/allappeal/allappeal"
   ],
   "window":{
     "backgroundTextStyle":"light",

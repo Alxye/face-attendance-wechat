@@ -40,4 +40,4 @@
 
 5、保证微信小程序前端所使用的appid以及templateID和该项目flask后端代码配置文件config.py中填写的一致即可（**必须**）
 
-
+"weui-miniprogram": "^1.2.7"
