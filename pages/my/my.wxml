@@ -20,7 +20,7 @@
   <!--  -->
 </view>
 
-<view class="weui-cells notopline nobottomline card">
+<view class="weui-cells notopline nobottomline card" style="margin-top: 0px;border-radius:3%; ">
   <view class="weui-cell">
     <view class="flex flex1">
       <image class="info-icon" src="/imgs/calendar3.png" />
@@ -85,6 +85,34 @@
   </view>
 
 </view>
+
+<view class="weui-cells notopline nobottomline card" style="border-radius:3%; ">
+  <view class="weui-cells notopline nobottomline card">
+    <prompt id="prompt"></prompt>
+    <dropdownList id="dropdownList"></dropdownList>
+    <view class="grids card">
+      <navigator class="grid guide" bindtap="getInfo">
+        <image class="head-sm" src="../../imgs/guide.png" style="margin:0;"></image>
+        <view class="weui-grid__label text-sm">个人信息</view>
+      </navigator>
+      <navigator class="grid guide" bindtap="getTime">
+        <image class="head-sm" src="../../imgs/bizrecord.png" style="margin:0;position:relative;"></image>
+        <view class="weui-grid__label text-sm">打卡时限</view>
+      </navigator>
+      <navigator class="grid guide" bindtap="getWeb">
+        <image class="head-sm" src="https://cdn.mip.cn/orange/office/web-access-logo.png" style="margin:0;position:relative;"></image>
+        <view class="weui-grid__label text-sm">访问电脑端</view>
+      </navigator>
+
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
 <view class="block">
   <view style="font-size: 14px;">版本号：1.0.3</view>
 </view>

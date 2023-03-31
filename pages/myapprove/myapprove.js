@@ -1,4 +1,4 @@
-require("../../utils/Arrayincludes");
+require("../../@babel/runtime/helpers/Arrayincludes");
 const util = require('../../utils/util.js');
 var app = getApp();
 var globaldata = app.globalData;

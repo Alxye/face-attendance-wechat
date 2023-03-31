@@ -254,7 +254,7 @@ Page({
       })
     }
     else{
-      if(vm.data.distance>250.0){
+      if(vm.data.distance>1000.0){
         wx.showModal({
           title: '温馨提示',
           content: '距离打卡点过远',
