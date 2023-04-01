@@ -1,5 +1,10 @@
-# Face-Attendance-Wechat
-
+<h1 align="center">智慧考勤管理 - 微信小程序</h1>
+<p align="center">
+    <a href="https://www.bilibili.com/video/BV1mh41137yS/?vd_source=9a233e677646447199a2bcdb7c74c126">
+        Demo视频
+    </a>
+</p>
+基于人脸识别与定位的智慧考勤系统<br>
 负责人: 钟鑫云、马文浩
 
 
